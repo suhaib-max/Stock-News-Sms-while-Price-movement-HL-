@@ -42,5 +42,9 @@ for exercise in result["exercises"]:
         }
     }
 
-    sheet_response = requests.post(SHEET_ENDPOINT,json=sheet_input)
+    sheet_response = requests.post(SHEET_ENDPOINT,json=sheet_input, auth=(
+        "username",
+        "password"
+       )
+    )
     print(sheet_response.text)
